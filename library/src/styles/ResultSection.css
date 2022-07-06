@@ -1,0 +1,36 @@
+.resultSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 15px;
+    width: 68%;
+    background-color: #efefef;
+    padding: 25px;
+    border-radius: 15px;
+}
+.bookCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    width: 32%;
+}
+.bookCard img { height: 180px; }
+.infoSection {
+    margin-top: 25px;
+    color: rgb(61, 61, 61);
+}
+.title { font-weight: 700; }
+.author {
+    font-weight: 200;
+    font-size: 12px;
+    margin: 10px 0;
+}
+.category {
+    background-color: rgba(172, 112, 230, 0.3);
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-size: 12px;
+}

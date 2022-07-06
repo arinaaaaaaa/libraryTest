@@ -1,0 +1,32 @@
+.pageHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 180px;
+}
+.pageTitle, .pageSubtitle { text-align: center; }
+.pageTitle {
+  font-weight: 700;
+  font-size: 38px;
+  margin-bottom: 8px;
+}
+.pageSubtitle {
+  font-weight: 100;
+  font-size: 38px;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color:#fff;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  padding: 80px 0;
+  min-height: calc(100vh - 150px);
+}
+.contentContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 1210px;
+}

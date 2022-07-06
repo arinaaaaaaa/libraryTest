@@ -1,0 +1,33 @@
+.dropdown {
+    width: 400px;
+    user-select: none;
+    margin: 0 auto;
+    position: relative;
+}
+.header {
+    padding: 10px;
+    background: #fff;
+    box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.8);
+    color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.contentwe {
+    position: absolute;
+    left: 0;
+    top: 110%;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 3px 3px 10px 6 px rgba(0, 0, 0, 0.8);
+    color: blue;
+    width: 95%;
+}
+.item {
+    padding: 10px;
+    cursor: pointer;
+    transition: all .2s;
+}
+.item:hover {
+    background-color: #fcfcfc;
+}
