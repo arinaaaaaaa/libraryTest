@@ -2,7 +2,6 @@
     background-color: #efefef;
     width: 30%;
     height: fit-content;
-    padding: 20px;
     border-radius: 15px;
 }
 .inputField {
@@ -10,38 +9,147 @@
     align-items: center;
 }
 .inputField input{
-    height: 42px;
-    padding: 0 10px;
     width: 70%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     transition: all .1s;
     font-family: 'Roboto';
-    font-size: 12px;
     color: rgb(38, 17, 85);
 }
 .inputField input:focus { border: 1px solid rgb(75, 30, 179);}
 .inputField button {
-    height: 42px;
     width: 30%;
     border: none;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     background-color: rgb(75, 30, 179);
     color: #fff;
-    font-size: 12px;
 }
-.selector { margin-top: 20px; }
 .selectorTitle {
     color: rgb(75, 30, 179);
     font-weight: 700;
-    font-size: 16px;
-    margin-bottom: 10px;
 }
 .selector select {
     width: 100%;
-    height: 42px;
     font-family: 'Roboto';
-    font-size: 12px;
     color: rgb(38, 17, 85);
+}
+
+@media (min-width: 1920px), (max-width: 1920px) {
+    .searchBoxWrapper { padding: 35px; }
+    .inputField input, .inputField button, .selector select {
+        height: 52px;
+        font-size: 16px;
+    }
+    .inputField input { padding: 0 15px; }
+    .selector { margin-top: 25px; }
+    .selectorTitle {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 1550px) {
+    .searchBoxWrapper { padding: 30px; }
+    .inputField input, .inputField button, .selector select { height: 48px; }
+}
+
+@media (max-width: 1420px) {
+    .searchBoxWrapper { padding: 25px; }
+    .inputField input, .inputField button, .selector select { height: 45px; }
+    .inputField input { padding: 0 10px; }
+    .selector { margin-top: 20px; }
+    .selectorTitle { margin-bottom: 10px; }
+}
+
+@media (max-width: 1280px) {
+    .searchBoxWrapper { padding: 20px; }
+    .inputField input, .inputField button, .selector select {
+        height: 42px;
+        font-size: 14px;
+    }
+    .selector { margin-top: 15px; }
+    .selectorTitle {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .inputField input, .inputField button, .selector select {
+        height: 42px;
+        font-size: 12px;
+    }
+    .inputField input { padding: 0 8px; }
+    .selector { margin-top: 12px; }
+    .selectorTitle {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 850px) {
+    .searchBoxWrapper { padding: 15px; }
+    .inputField input, .inputField button, .selector select {
+        height: 28px;
+        font-size: 10px;
+    }
+    .inputField input { padding: 0 6px; }
+    .selector { margin-top: 10px; }
+    .selectorTitle {
+        font-size: 11px;
+        margin-bottom: 4px;
+    }
+}
+
+@media (max-width: 720px) {
+    .searchBoxWrapper { padding: 12px; }
+    .inputField input, .inputField button, .selector select {
+        height: 24px;
+        font-size: 9px;
+    }
+    .selectorTitle {
+        font-size: 10px;
+        margin-bottom: 4px;
+    }
+}
+
+@media (max-width: 560px) {
+    .searchBoxWrapper {
+        width: 100%;
+        padding: 15px;
+    }
+    .inputField input, .inputField button, .selector select {
+        height: 52px;
+        font-size: 16px;
+    }
+    .inputField input { padding: 0 15px; }
+    .selector { margin-top: 25px; }
+    .selectorTitle {
+        font-size: 21px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .inputField input, .inputField button, .selector select { height: 48px; }
+    .inputField input { padding: 0 12px; }
+    .selector { margin-top: 20px; }
+    .selectorTitle {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 360px) {
+    .inputField input, .inputField button, .selector select {
+        height: 45px;
+        font-size: 14px;
+    }
+    .inputField input { padding: 0 12px; }
+    .selector { margin-top: 15px; }
+    .selectorTitle {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
 }

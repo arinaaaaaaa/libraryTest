@@ -2,35 +2,202 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    row-gap: 15px;
+    height: fit-content;
     width: 68%;
     background-color: #efefef;
-    padding: 25px;
     border-radius: 15px;
 }
 .bookCard {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px 20px;
     border-radius: 8px;
     background-color: #fff;
     width: 32%;
 }
-.bookCard img { height: 180px; }
-.infoSection {
-    margin-top: 25px;
-    color: rgb(61, 61, 61);
-}
+.infoSection { color: rgb(61, 61, 61); }
 .title { font-weight: 700; }
-.author {
-    font-weight: 200;
-    font-size: 12px;
-    margin: 10px 0;
-}
+.author { font-weight: 200; }
 .category {
     background-color: rgba(172, 112, 230, 0.3);
-    padding: 3px 5px;
     border-radius: 3px;
-    font-size: 12px;
+}
+
+@media (min-width: 1920px), (max-width: 1920px) {
+    .resultSection {
+        padding: 35px;
+        row-gap: 20px;
+    }
+    .bookCard { padding: 25px 35px; }
+    .bookCard img { height: 210px; }
+    .infoSection { margin-top: 30px; }
+    .title { font-size: 18px; }
+    .author {
+        font-size: 16px;
+        margin: 20px 0;
+    }
+    .category {
+        padding: 5px 8px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1550px) {
+    .resultSection {
+        padding: 30px;
+        row-gap: 18px;
+    }
+    .bookCard { padding: 25px 30px; }
+    .bookCard img { height: 190px; }
+    .infoSection { margin-top: 25px; }
+    .author { margin: 18px 0; }
+}
+
+@media (max-width: 1420px) {
+    .resultSection {
+        padding: 25px;
+        row-gap: 18px;
+    }
+    .bookCard { padding: 18px 20px; }
+    .bookCard img { height: 180px; }
+}
+
+@media (max-width: 1280px) {
+    .resultSection {
+        padding: 20px;
+        row-gap: 12px;
+    }
+    .bookCard { padding: 15px 18px; }
+    .bookCard img { height: 180px; }
+    .infoSection { margin-top: 20px; }
+    .title { font-size: 16px; }
+    .author {
+        font-size: 14px;
+        margin: 15px 0;
+    }
+    .category {
+        padding: 3px 5px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .resultSection {
+        padding: 20px;
+        row-gap: 10px;
+    }
+    .bookCard { padding: 15px; }
+    .bookCard img { height: 150px; }
+    .infoSection { margin-top: 15px; }
+    .title { font-size: 14px; }
+    .author {
+        font-size: 13px;
+        margin: 12px 0 15px;
+    }
+    .category {
+        padding: 3px 5px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 850px) {
+    .resultSection {
+        padding: 15px;
+        row-gap: 8px;
+    }
+    .bookCard { padding: 12px; }
+    .bookCard img { height: 110px; }
+    .infoSection { margin-top: 10px; }
+    .title { font-size: 11px; }
+    .author {
+        font-size: 10px;
+        margin: 10px 0 12px;
+    }
+    .category {
+        padding: 2px 4px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 720px) {
+    .resultSection {
+        padding: 12px;
+        row-gap: 6px;
+    }
+    .bookCard { padding: 8px; }
+    .bookCard img { height: 100px; }
+    .infoSection { margin-top: 10px; }
+    .title { font-size: 10px; }
+    .author {
+        font-size: 9px;
+        margin: 6px 0 7px;
+    }
+    .category {
+        padding: 2px 4px;
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 560px) {
+    .resultSection {
+        width: 100%;
+        padding: 15px;
+        row-gap: 8px;
+    }
+    .bookCard {
+        width: 49%;
+        padding: 15px;
+    }
+    .bookCard img { height: 150px; }
+    .infoSection { margin-top: 20px; }
+    .title { font-size: 16px; }
+    .author {
+        font-size: 14px;
+        margin: 15px 0 18px;
+    }
+    .category {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .resultSection {
+        padding: 12px;
+        row-gap: 6px;
+    }
+    .bookCard { padding: 12px; }
+    .bookCard img { height: 120px; }
+    .infoSection { margin-top: 15px; }
+    .title { font-size: 14px; }
+    .author {
+        font-size: 12px;
+        margin: 12px 0 15px;
+    }
+    .category {
+        padding: 5px 8px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .resultSection {
+        padding: 15px;
+        row-gap: 10px;
+    }
+    .bookCard {
+        width: 100%;
+        padding: 15px;
+    }
+    .bookCard img { height: 160px; }
+    .infoSection { margin-top: 20px; }
+    .title { font-size: 16px; }
+    .author {
+        font-size: 14px;
+        margin: 12px 0 15px;
+    }
+    .category {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
 }
