@@ -1,38 +1,38 @@
-import "../styles/SearchBox.css"
 
-function CategoriesSelect() {
-    return (
-        <div className="selector">
-            <p className="selectorTitle">Категории</p>
-            <select>
-                <option>all</option>
-                <option>art</option>
-            </select>
-        </div>
-    )
-}
+import { useDispatch } from "react-redux";
+import { setSearchValue, setCategory } from "../redux/slices/filterSlice";
+import "../styles/SearchBox.css";
 
-function SortSelect() {
-    return (
-        <div className="selector">
-            <p className="selectorTitle">Отсортировать</p>
-            <select>
-                <option>relevated</option>
-                <option>newest</option>
-            </select>
-        </div>
-    )
-}
 
 export default function SearchBox() {
+
+    const dispatch = useDispatch()
+
     return (
-        <form className="searchBoxWrapper" method="get">
+        <div className="searchBoxWrapper">
             <span className="inputField">
-                <input type="text" placeholder="Я ищу..."/>
+                <input type="text" placeholder="Я ищу..." onInput={(event) => dispatch(setSearchValue(event.target.value))}/>
                 <button type="submit">Найти</button>
             </span>
-            <CategoriesSelect/>
-            <SortSelect/>
-        </form>
+            <div className="selector">
+                <p className="selectorTitle">Категории</p>
+                <select onChange={(event) => dispatch(setCategory(event.target.value))}>
+                    <option value="all">Все</option>
+                    <option value="art">Искусство</option>
+                    <option value="biography">Биографии</option>
+                    <option value="computers">Компьютеры</option>
+                    <option value="history">История</option>
+                    <option value="medical">Медицина</option>
+                    <option value="poetry">Поэтия</option>
+                </select>
+            </div>
+            <div className="selector">
+                <p className="selectorTitle">Отсортировать</p>
+                <select onChange={(event) => dispatch(setCategory(event.target.value))}>
+                    <option value="relevated">По релевантности</option>
+                    <option value="newest">По новизне</option>
+                </select>
+            </div>
+        </div>
     )
 }

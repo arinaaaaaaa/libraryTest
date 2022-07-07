@@ -1,8 +1,6 @@
 import React from 'react';
-import { configureStore } from '@reduxjs/toolkit'
 import Result from './components/Result';
 import SearchBox from './components/SearchBox';
-import { reducer } from './redux/reducers/searchReducers';
 import './styles/App.css';
 
 export default function App() {
