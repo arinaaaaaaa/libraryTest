@@ -15,12 +15,24 @@
     background-color: #fff;
     width: 32%;
 }
-.infoSection { color: rgb(61, 61, 61); }
-.title { font-weight: 700; }
+.infoSection { 
+    width: 100%;
+    color: rgb(61, 61, 61);
+}
+.title { 
+    font-weight: 700;
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .author { font-weight: 200; }
 .category {
     background-color: rgba(172, 112, 230, 0.3);
     border-radius: 3px;
+    width: fit-content;
 }
 
 @media (min-width: 1920px), (max-width: 1920px) {
@@ -31,10 +43,15 @@
     .bookCard { padding: 25px 35px; }
     .bookCard img { height: 210px; }
     .infoSection { margin-top: 30px; }
-    .title { font-size: 18px; }
+    .title {
+        font-size: 18px;
+        height: 55px;
+    }
     .author {
         font-size: 16px;
         margin: 20px 0;
+        line-height: 1.4em;
+        height: 45px;
     }
     .category {
         padding: 5px 8px;

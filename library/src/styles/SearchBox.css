@@ -34,6 +34,12 @@
     font-family: 'Roboto';
     color: rgb(38, 17, 85);
 }
+.found {
+    color: rgb(75, 30, 179);
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 20px;
+}
 
 @media (min-width: 1920px), (max-width: 1920px) {
     .searchBoxWrapper { padding: 35px; }
