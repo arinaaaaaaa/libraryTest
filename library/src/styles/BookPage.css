@@ -1,0 +1,41 @@
+.bookPage { width: 68%;}
+.back {
+    background: none;
+    color: rgb(75, 30, 179);
+    font-size: 16px;
+    margin-top: 20px;
+}
+.bookPageWrapper {
+    display: flex;
+    justify-content: space-between;
+    background-color: #efefef;
+    border-radius: 15px;
+    min-height: 100%;
+    padding: 35px;
+}
+.bookImg { width: 30%;}
+.bookImg img { width: 100%;}
+.bookInfoSection { 
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 20px 0;
+    width: 60%;
+    color: rgb(61, 61, 61);
+}
+.bookInfoSection .title { height: auto; font-size: 32px; }
+.bookInfoSection .authors {
+    font-size: 21px;
+    font-weight: 200;
+}
+.bookInfoSection .categoriesList {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 8px;
+}
+.description {
+    font-weight: 200;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 1.4em;
+}

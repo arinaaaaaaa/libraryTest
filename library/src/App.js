@@ -1,6 +1,5 @@
 import React from 'react';
-import Result from './components/Result';
-import SearchBox from './components/SearchBox';
+import MainWindow from './components/Main';
 import './styles/App.css';
 
 export default function App() {
@@ -12,10 +11,7 @@ export default function App() {
         <p className="pageSubtitle">сейчас найдем</p>
       </div>
       <div className="content">
-        <div className="contentContainer">
-          <SearchBox/>
-          <Result/>
-        </div>
+        <MainWindow/>
       </div>
     </div>
   );

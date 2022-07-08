@@ -10,6 +10,7 @@
     justify-content: space-between;
     height: fit-content;
     margin-bottom: 20px;
+    min-height: 100%;
 }
 .blocked {
     opacity: 0.2;
@@ -28,6 +29,7 @@
     cursor: pointer;
     border: 2px solid rgb(75, 30, 179);
 }
+.bookCard img { max-width: 98%; }
 .infoSection { 
     display: flex;
     flex-direction: column;
@@ -60,6 +62,13 @@
     width: fit-content;
 }
 .emptyList { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100%;
+    font-size: 24px;
+    font-weight: 300;
     color: rgb(38, 17, 85);
 }
 .loadMore {

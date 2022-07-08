@@ -15,9 +15,13 @@ const booksListSlice = createSlice({
         setCounter: (state, action) => {
             state.booksCounter = action.payload;
         },
+        clear: (state) => {
+            state.booksArray = [];
+            state.booksCounter = 0;
+        }
     }
 });
 
-export const { setArray, setCounter } = booksListSlice.actions;
+export const { setArray, setCounter, clear } = booksListSlice.actions;
 
 export default booksListSlice.reducer;

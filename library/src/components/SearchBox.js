@@ -1,39 +1,32 @@
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setSearchValue, setCategory, setSorted } from "../redux/slices/filterSlice";
-import { setArray, setCounter } from "../redux/slices/booksListSlice";
-import BooksRequest from "../common/booksRequest";
+import { clear } from "../redux/slices/booksListSlice";
 import "../styles/SearchBox.css";
 
-export default function SearchBox() {
+export default function SearchBox(props) {
 
-    const dispatch = useDispatch()
-
-    const requestParams = {
-        searchString: useSelector((state) => state.filter.searchString),
-        category: useSelector((state) => state.filter.category),
-        sorted: useSelector((state) => state.filter.sorting),
-        maxResults: useSelector((state) => state.pages.pageNumber * state.pages.pageSize) 
-    }
-
-    async function booksRequest() {
-        let response = await BooksRequest(requestParams);
-        dispatch(setArray(response.data.items));
-        dispatch(setCounter(response.data.totalItems));
-    }
+    const dispatch = useDispatch();
 
     function sendOnEnter(event) {
-        if (event.keyCode === 13) booksRequest()
+        if (event.keyCode === 13) props.request()
     }
 
     return (
         <div className="searchBoxWrapper">
             <span className="inputField">
                 <input type="text" placeholder="Я ищу..." 
-                    onInput={(event) => dispatch(setSearchValue(event.target.value))}
-                    onKeyDown={ (event) => sendOnEnter(event) }
+                    onInput={(event) => { 
+                        dispatch(setSearchValue(event.target.value));
+                            if (event.target.value != "") dispatch(clear)                           
+                        }}
+                    onKeyDown={ (event) => {
+                        event.target.value != "" ?
+                            sendOnEnter(event)
+                            : dispatch(clear())
+                    }}
                 />
-                <button onClick={() => booksRequest()}>Найти</button>
+                <button onClick={props.request}>Найти</button>
             </span>
             <div className="selector">
                 <p className="selectorTitle">Категории</p>
@@ -58,7 +51,7 @@ export default function SearchBox() {
                     <option value="newest">По новизне</option>
                 </select>
             </div>
-            <p className="found">Найденных книг: <span style={{color: '#ff6600'}}>{useSelector((state) => state.books.booksCounter)}</span></p>
+            <p className="found">Найденных книг: <span style={{color: '#ff6600'}}>{props.count}</span></p>
         </div>
     )
 }

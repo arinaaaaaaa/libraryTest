@@ -1,16 +1,16 @@
 import axios from 'axios';
 
-export default async function BooksRequest(requestParams) {
+export default async function booksGET(requestParams) {
     document.getElementById("booksArray").classList.add("blocked")
     document.getElementById("loader").classList.remove("hide-loader")
     var requestResponse = []
 
     requestResponse = await axios('https://www.googleapis.com/books/v1/volumes', { params: 
-        { 
+        {
             q: requestParams.searchString,
             subject: requestParams.category,
             orderBy: requestParams.sorted,
-            startIndex: 0,
+            startIndex: requestParams.index,
             maxResults: requestParams.maxResults,
             key: 'AIzaSyBYmtF1e6PsQJ7IdcYCu3gveZrzvBTx5u0'
         } },
