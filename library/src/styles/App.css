@@ -119,6 +119,7 @@
 @media (max-width: 360px) {
   .contentContainer {
     width: 280px;
+    height: fit-content;
     row-gap: 10px;
   }
   .pageHeader { height: 100px; }

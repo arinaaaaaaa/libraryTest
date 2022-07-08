@@ -2,40 +2,184 @@
 .back {
     background: none;
     color: rgb(75, 30, 179);
-    font-size: 16px;
-    margin-top: 20px;
+}
+#container { position: relative;}
+.blocked {
+    opacity: 0.2;
+    pointer-events: none;
 }
 .bookPageWrapper {
     display: flex;
     justify-content: space-between;
     background-color: #efefef;
     border-radius: 15px;
-    height: 100%;
-    padding: 35px;
+    height: fit-content;
 }
 .bookImg { width: 30%;}
 .bookImg img { width: 100%;}
 .bookInfoSection { 
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
-    padding: 20px 0;
     width: 60%;
     color: rgb(61, 61, 61);
 }
-.bookInfoSection .title { height: auto; font-size: 32px; }
-.bookInfoSection .authors {
-    font-size: 21px;
-    font-weight: 200;
-}
+.bookInfoSection .title { height: auto; }
+.bookInfoSection .authors { font-weight: 200; }
 .bookInfoSection .categoriesList {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 8px;
 }
 .description {
     font-weight: 200;
-    font-size: 16px;
     text-align: justify;
     line-height: 1.4em;
+}
+.loader {
+    position: absolute;
+    border: 8px solid #fff;
+    border-top: 8px solid rgb(75, 30, 179);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+ }
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hide-loader { display:none; }
+
+@media (min-width: 1920px), (max-width: 1920px) {
+    .back {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    .bookPageWrapper { padding: 35px; }
+    .bookInfoSection { 
+        row-gap: 20px;
+        padding: 20px 0;
+    }
+    .bookInfoSection .title { font-size: 32px; }
+    .bookInfoSection .authors { font-size: 21px; }
+    .bookInfoSection .categoriesList { column-gap: 8px; }
+    .description { font-size: 16px; }
+    .loader {
+        top: calc(50% - 30px);
+        left: calc(50% - 30px);
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 1550px) {
+    .bookPageWrapper { padding: 30px; }
+}
+
+@media (max-width: 1420px) {
+    .bookInfoSection .title { font-size: 27px; }
+    .bookPageWrapper { padding: 25px; }
+}
+
+@media (max-width: 1280px) {
+    .back {
+        font-size: 16px;
+        margin-top: 15px;
+    }
+    .bookPageWrapper { padding: 20px; }
+}
+
+@media (max-width: 1024px) {
+    .back { font-size: 11px; }
+    .bookInfoSection { row-gap: 15px; }
+    .bookInfoSection .title { font-size: 18px; }
+    .bookInfoSection .authors { font-size: 14px; }
+    .bookInfoSection .categoriesList { column-gap: 6px; }
+    .description { font-size: 14px; }
+    .loader {
+        top: calc(50% - 25px);
+        left: calc(50% - 25px);
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 850px) {
+    .back { font-size: 11px; }
+    .bookInfoSection { row-gap: 10px; }
+    .bookInfoSection .title { font-size: 16px; }
+    .bookInfoSection .authors { font-size: 11px; }
+    .description { font-size: 11px; }
+}
+
+@media (max-width: 720px) {
+    .back {
+        font-size: 10px;
+        margin-top: 10px;
+    }
+    .bookPageWrapper { padding: 12px; }
+    .bookInfoSection { padding: 10px 0; }
+    .bookInfoSection .title { font-size: 14px; }
+    .bookInfoSection .authors { font-size: 10px; }
+    .bookInfoSection .categoriesList { column-gap: 8px; }
+    .description { font-size: 10px; }
+    .loader {
+        top: calc(50% - 22.5px);
+        left: calc(50% - 22.5px);
+        width: 45px;
+        height: 45px;
+    }
+}
+@media (max-width: 560px) {
+    .bookPage { width: 100%; }
+    .bookPageWrapper { flex-direction: column; align-items: center;}
+    .bookImg { width: 50%;}
+    .bookInfoSection {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .back {
+        font-size: 21px;
+        margin-top: 20px;
+    }
+    .bookInfoSection { row-gap: 25px; }
+    .category { font-size: 16px;}
+    .bookPageWrapper { padding: 15px; }
+    .bookInfoSection { padding: 0; }
+    .bookInfoSection .title { font-size: 27px; }
+    .bookInfoSection .authors { font-size: 21px; }
+    .bookInfoSection .categoriesList { column-gap: 12px; }
+    .description { font-size: 21px; }
+    .loader {
+        top: calc(50% - 25px);
+        left: calc(50% - 25px);
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .bookInfoSection { margin-top: 15px; }
+    .back {
+        font-size: 18px;
+        margin-top: 15px;
+    }
+    .bookInfoSection { row-gap: 20px; }
+    .category { font-size: 14px;}
+    .bookInfoSection .title { font-size: 24px; }
+    .bookInfoSection .authors { font-size: 18px; }
+    .bookInfoSection .categoriesList { column-gap: 8px; }
+    .description { font-size: 18px; }
+}
+
+@media (max-width: 360px) {
+    .back {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .bookInfoSection { row-gap: 15px; }
+    .category { font-size: 12px;}
+    .bookInfoSection .title { font-size: 21px; }
+    .bookInfoSection .authors { font-size: 16px; }
+    .bookInfoSection .categoriesList { column-gap: 6px; }
+    .description { font-size: 16px; }
 }

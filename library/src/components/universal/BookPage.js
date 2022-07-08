@@ -7,14 +7,15 @@ export default function BookPage(props) {
     const dispatch = useDispatch();
 
     return props.bookInfo ? (
-        <div className="bookPage">
+        <>
+        <div className="bookPage" id="container">
             <div className="bookPageWrapper">
                 <div className="bookImg"><img src={props.bookInfo.imgPath} alt="" /></div>
                 <div className="bookInfoSection">
                     <p className="title">{props.bookInfo.title}</p>
                     <p className="authors">{props.bookInfo.authors?.join(', ')}</p>
                     <span className="categoriesList">
-                        {props.bookInfo.categories.map((categoryItem) =>
+                        {props.bookInfo.categories?.map((categoryItem) =>
                             <span className="category">{categoryItem}</span>
                         )}
                     </span>
@@ -23,5 +24,7 @@ export default function BookPage(props) {
             </div>
             <button className="back" onClick = {() => dispatch(setPageState(1))}>Вернуться назад</button>
         </div>
+        <div className="loaderSecion"><div className="loader hide-loader" id="loader"></div></div>
+        </>
     ) : null
 }

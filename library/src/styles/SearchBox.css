@@ -37,8 +37,6 @@
 .found {
     color: rgb(75, 30, 179);
     font-weight: 700;
-    font-size: 14px;
-    margin-top: 20px;
 }
 
 @media (min-width: 1920px), (max-width: 1920px) {
@@ -52,6 +50,10 @@
     .selectorTitle {
         font-size: 18px;
         margin-bottom: 12px;
+    }
+    .found {
+        font-size: 18px;
+        margin-top: 30px;
     }
 }
 
@@ -79,6 +81,10 @@
         font-size: 16px;
         margin-bottom: 8px;
     }
+    .found {
+        font-size: 16px;
+        margin-top: 25px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -91,6 +97,10 @@
     .selectorTitle {
         font-size: 14px;
         margin-bottom: 5px;
+    }
+    .found {
+        font-size: 14px;
+        margin-top: 20px;
     }
 }
 
@@ -106,6 +116,7 @@
         font-size: 11px;
         margin-bottom: 4px;
     }
+    .found { font-size: 11px; }
 }
 
 @media (max-width: 720px) {
@@ -117,6 +128,10 @@
     .selectorTitle {
         font-size: 10px;
         margin-bottom: 4px;
+    }
+    .found {
+        font-size: 10px;
+        margin-top: 10px;
     }
 }
 
@@ -135,6 +150,10 @@
         font-size: 21px;
         margin-bottom: 10px;
     }
+    .found {
+        font-size: 21px;
+        margin-top: 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -144,6 +163,10 @@
     .selectorTitle {
         font-size: 18px;
         margin-bottom: 8px;
+    }
+    .found {
+        font-size: 18px;
+        margin-top: 15px;
     }
 }
 
@@ -157,5 +180,9 @@
     .selectorTitle {
         font-size: 16px;
         margin-bottom: 6px;
+    }
+    .found {
+        font-size: 16px;
+        margin-top: 10px;
     }
 }

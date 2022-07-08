@@ -25,22 +25,26 @@ export default function MainWindow() {
     }
 
     function booksRequest() {
-        requestParams.searchString &&
-        booksGET(requestParams)
-        .then((response) => {
-            console.log(response)
-            dispatch(setArray(response.data.items));
-            dispatch(setCounter(response.data.totalItems));
-        })
-        .catch((error) => {
-            alert('Ошибка обращения к серверу, страница не найдена')
-        });
+        if (requestParams.searchString) {
+            requestParams.index = 0;
+            booksGET(requestParams)
+            .then((response) => {
+                dispatch(setPageState(1))
+                dispatch(setArray(response.data.items));
+                dispatch(setCounter(response.data.totalItems));
+            })
+            .catch((error) => {
+                alert('Ошибка обращения к серверу, страница не найдена')
+            });
+        }
     }
 
     function updateArray() {
         requestParams.searchString &&
         booksGET(requestParams)
         .then((response) => {
+            console.log(response.request);
+            console.log(response.data)
             console.log(collection_books.booksArray + response.data.items)
             dispatch(setArray(collection_books.booksArray.concat(response.data.items)));
         })

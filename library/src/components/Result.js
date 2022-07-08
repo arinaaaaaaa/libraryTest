@@ -10,7 +10,7 @@ export default function Result(props) {
 
     return (
         <div className="resultSection">
-            <div className="booksArray" id="booksArray">
+            <div className="booksArray" id="container">
                 { props.books?.length != 0 ? props.books?.map((book) =>
                     <BookCard
                         title = { book.volumeInfo.title ? book.volumeInfo.title : null }
