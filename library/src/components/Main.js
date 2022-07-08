@@ -6,14 +6,13 @@ import BookPage from "./universal/BookPage";
 import SearchBox from "./SearchBox";
 
 import { setArray, setCounter } from "../redux/slices/booksListSlice";
+import { setPageState } from "../redux/slices/pageSlice";
 
 
 
 export default function MainWindow() {
     const collection_books = useSelector((state) => state.books);
     const single_book = useSelector((state) => state.book);
-    const pageNumber = useSelector((state) => state.pages.pageNumber);
-    const pageSize = useSelector((state) => state.pages.pageSize);
 
     const dispatch = useDispatch();
 
@@ -21,23 +20,32 @@ export default function MainWindow() {
         searchString: useSelector((state) => state.filter.searchString),
         category: useSelector((state) => state.filter.category),
         sorted: useSelector((state) => state.filter.sorting),
-        index: collection_books.booksArray.length,
+        index: collection_books.booksArray ? collection_books.booksArray.length : 0,
         maxResults: useSelector((state) => state.pages.pageNumber * state.pages.pageSize) 
     }
 
     function booksRequest() {
         requestParams.searchString &&
-        booksGET(requestParams).then((response) => {
+        booksGET(requestParams)
+        .then((response) => {
+            console.log(response)
             dispatch(setArray(response.data.items));
             dispatch(setCounter(response.data.totalItems));
+        })
+        .catch((error) => {
+            alert('Ошибка обращения к серверу, страница не найдена')
         });
     }
 
     function updateArray() {
         requestParams.searchString &&
-        booksGET(requestParams).then((response) => {
+        booksGET(requestParams)
+        .then((response) => {
             console.log(collection_books.booksArray + response.data.items)
             dispatch(setArray(collection_books.booksArray.concat(response.data.items)));
+        })
+        .catch((error) => {
+            alert('Ошибка обращения к серверу, страница не найдена')
         });
     }
 

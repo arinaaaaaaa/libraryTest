@@ -7,8 +7,10 @@ export default async function booksGET(requestParams) {
 
     requestResponse = await axios('https://www.googleapis.com/books/v1/volumes', { params: 
         {
-            q: requestParams.searchString,
-            subject: requestParams.category,
+            q: requestParams.category == 'all' ? 
+                requestParams.searchString
+                    : 
+                `${requestParams.searchString}+subject:${requestParams.category}`,
             orderBy: requestParams.sorted,
             startIndex: requestParams.index,
             maxResults: requestParams.maxResults,

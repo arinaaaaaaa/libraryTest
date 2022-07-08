@@ -10,7 +10,7 @@
     justify-content: space-between;
     background-color: #efefef;
     border-radius: 15px;
-    min-height: 100%;
+    height: 100%;
     padding: 35px;
 }
 .bookImg { width: 30%;}
