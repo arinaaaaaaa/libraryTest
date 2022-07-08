@@ -5,9 +5,15 @@ export default function BookCard(props) {
         <div className="bookCard">
             <img src={props.imgPath} alt="" />
             <div className="infoSection">
-                <p className="title">{props.title}</p>
-                <p className="author">{props.authors}</p>
-                <span className="category">{props.category}</span>
+                {props.title ?
+                    <p className="title">{props.title}</p>
+                : null}
+                {props.authors ?
+                    <p className="author">{props.authors}</p>
+                : null }
+                {props.category ?
+                    <span className="category">{props.category}</span>
+                : null }
             </div>
         </div>
     )

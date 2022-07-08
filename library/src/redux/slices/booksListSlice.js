@@ -11,11 +11,9 @@ const booksListSlice = createSlice({
     reducers: {
         setArray: (state, action) => {
             state.booksArray = action.payload;
-            console.log(state.booksArray)
         },
         setCounter: (state, action) => {
             state.booksCounter = action.payload;
-            console.log(state.booksCounter)
         },
     }
 });
