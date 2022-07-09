@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  app:
+    build: ./library
+    volumes:
+      - app_build:/library/build
+  nginx:
+    image: nginx
+    depends_on:
+      - app
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - app_build:/etc/nginx/html/library
+    ports:
+      - 80:80
+
+volumes:
+  app_build:
